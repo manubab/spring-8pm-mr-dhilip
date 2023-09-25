@@ -1,0 +1,7 @@
+package com.dispatcher;
+
+import org.springframework.web.servlet.support.*;
+
+public class SpringWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer                                   {
+
+}

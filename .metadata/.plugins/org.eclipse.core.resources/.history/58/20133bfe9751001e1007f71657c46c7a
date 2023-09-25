@@ -1,0 +1,23 @@
+package com.service;
+
+
+import org.springframework.stereotype.*;
+
+
+@Component
+public class JwtTokenUtil 
+{
+	
+	
+	// token creation :jwt Api
+	
+	// 1.subject :username
+	// 2.at what time it is created :created time
+	// 3.Expaired time
+	
+	private long expMilliSeconds =3*6000;
+	
+	private final String Security_key="HSHDHSDJKDSDSHKDDFKDFJDJFDJFFKDFDKFKFSFSDKFDNKF"
+			+ "HDHSDSHDSJDSHHSDHSDHSDHSDHSDCNVCCXNCNCJDSHDHJDSHDNCNNNNNNHJDHSD";
+
+}

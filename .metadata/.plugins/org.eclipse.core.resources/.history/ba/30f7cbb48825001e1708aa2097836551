@@ -1,0 +1,10 @@
+package com.naresh.it.course.autowired;
+
+public class SpringBeansAutowiredApplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

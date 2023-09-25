@@ -1,0 +1,116 @@
+package com.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.entity.UserEntity;
+import com.repo.UsersRepo;
+public class UserService implements UserDetailsService{
+
+	
+	@Autowired
+	UsersRepo repo;
+	
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	
+	
+	
+	public String registerUser(UserRegister request)
+	{
+		
+		UserEntity entity=new UserEntity();
+		
+		entity.setEmailId(request.getEmailId());
+		entity.setPassword(request.getPassword());
+		entity.setFullName(request.getFullName());
+		entity.setContactNumber(request.getContactNumber());
+		
+		
+		repo.save(entity);
+		return "User Created Successfully please login now ";
+		
+	}
+	
+	
+	public String loginUser(UserLogin request)
+	{
+		
+		UserEntity entity=repo.findByEmailIdAndPassword(request.getEmailId(), request.getPassword());
+		
+		
+		System.out.println(entity);
+		
+		
+		if(entity!=null)
+		{
+			return "User login is Successfull .welcome to home ";
+		}
+		
+		
+		
+		
+		return "invalid Credentials ..please enter valid Createntilas ";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	                                                                                                                                      
+	
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+
+	Optional<UserEntity> user=	repo.findById(username);
+	
+	UserEntity userdetails=user.orElseThrow(()-> new RuntimeException("Email not Found"));
+		
+
+		return userdetails;
+	}
+
+}

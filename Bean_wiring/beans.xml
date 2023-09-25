@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="product1" class="com.flipkart.products.Product"
+		scope="prototype">
+		<property name="productId" value="M@123!" />
+		<property name="productName" value="Mouse" />
+	</bean>
+
+
+
+	<bean id="product2" class="com.flipkart.products.Product">
+		<property name="productId" value="M@123!" />
+		<property name="productName" value="Mouse" />
+	</bean>
+
+
+	<bean id="order" class="com.flipkart.orders.Order">
+		<constructor-arg value="3333333333" />
+		<constructor-arg value="5" />
+		<constructor-arg ref="product1" />
+	</bean>
+
+	<bean id="flipkart"
+		class="com.flipkart.Management.FlipkartApplication"
+		autowire="constructor">
+		<constructor-arg index="0" value="5666"></constructor-arg>
+	</bean>
+
+
+	<bean id="c1" class="com.nit.customer.Customer">
+		<constructor-arg index="0" value="Manu" />
+		<constructor-arg index="1" value="34323.909" />
+	</bean>
+
+</beans>

@@ -1,0 +1,77 @@
+package com.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.entity.UserEntity;
+import com.repo.UsersRepo;
+public class UserService implements UserDetailsService{
+
+	
+	@Autowired
+	UsersRepo repo;
+	
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	                                                                                                                                      
+	
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+
+	Optional<UserEntity> user=	repo.findById(username);
+	
+	UserEntity userdetails=user.orElseThrow(()-> new RuntimeException("Email not Found"));
+		
+
+		return userdetails;
+	}
+
+}

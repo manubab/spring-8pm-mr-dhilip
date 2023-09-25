@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="iPhnoe" class="com.amazon.Products">
+		<constructor-arg value="3333"></constructor-arg>
+		<constructor-arg value="iphone"></constructor-arg>
+		<constructor-arg value="344.90"></constructor-arg>
+		<constructor-arg value="false"></constructor-arg>
+		<constructor-arg>
+		     <set>
+		         <value>Iphone11.g</value>
+		         <value>1+_Smile.5g</value>
+		         <value>Seatilite</value>
+		     </set>
+		</constructor-arg>
+		
+		<constructor-arg>
+		   <map>
+		       <entry key="true" value="IPhnoes Availe"></entry>
+		   </map>
+		</constructor-arg>
+		
+		
+	</bean>
+
+</beans>

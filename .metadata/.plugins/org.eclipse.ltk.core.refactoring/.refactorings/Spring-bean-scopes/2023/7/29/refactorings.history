@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.naresh.it.couse&apos; to &apos;com.naresh.it.course&apos;&#x0D;&#x0A;- Original project: &apos;Spring-bean-scopes&apos;&#x0D;&#x0A;- Original element: &apos;Spring-bean-scopes/src/com.naresh.it.couse&apos;&#x0D;&#x0A;- Renamed element: &apos;Spring-bean-scopes/src/com.naresh.it.course&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.naresh.it.couse&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.naresh.it.couse" name="com.naresh.it.course" qualified="false" references="true" stamp="1689696905347" textual="false" version="1.0"/>
+</session>

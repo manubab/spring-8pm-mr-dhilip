@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+    <bean id="or1" class="test.OrderDetails">
+    
+   <property name="orderId" value="3333333333333"/>
+   <property name="orderPrice" value="299.90"/>
+   
+   <property name="itemsPrices">
+      <map>
+          <entry key="Coke" value="60"/>
+          <entry key="Maaza" value="40"/>
+          <entry key="Cake" value="40"/>
+      </map>
+   </property>
+   
+    
+    </bean>
+   
+</beans>

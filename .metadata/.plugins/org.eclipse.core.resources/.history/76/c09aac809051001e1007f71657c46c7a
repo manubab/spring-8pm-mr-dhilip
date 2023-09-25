@@ -1,0 +1,25 @@
+package com.jpa;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+@Configuration
+@EnableJpaRepositories("com.*")
+@EnableTransactionManagement
+public class SpringJpaConfiguration 
+{
+	
+	
+	public javax.sql.DataSource getDataResource()
+	{
+		
+		DriverManagerDataSource dataSource= new DriverManagerDataSource();
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+		dataSource.setUsername("system");
+		dataSource.setPassword("tiger");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+
+		return dataSource;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.controller;
+
+public class UserLoginResponse
+{
+	
+	private String emailId;
+	
+	private String token;
+	
+	
+	
+
+}

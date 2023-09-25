@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;01SpringJdbcEx&apos;&#x0D;&#x0A;- Original project: &apos;01SpringJdbcEx&apos;&#x0D;&#x0A;- Original element: &apos;01SpringJdbcEx/src/co.manu&apos;" description="Delete element" element1="/src&lt;co.manu" element2="/src&lt;co" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1690280028555" subPackages="false" version="1.0"/>
+</session>

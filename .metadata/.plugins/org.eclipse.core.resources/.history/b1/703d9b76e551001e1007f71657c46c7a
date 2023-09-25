@@ -1,0 +1,10 @@
+package com.security;
+
+import org.springframework.security.config.annotation.web.configuration.*;
+import org.springframework.context.annotation.Configuration;
+
+@EnableWebSecurity
+@Configuration
+public class SecurityConfiguration {
+
+}

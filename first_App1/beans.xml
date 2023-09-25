@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="pro1" class="fcom.nit.comp.ProductDetails">
+		<property name="productName" value="Iphone" />
+		<property name="productPrice" value="100000" />
+		<property name="productId" value="Iphnone 14" />
+
+	</bean>
+
+
+	<bean id="pro2" class="fcom.nit.comp.ProductDetails">
+		<property name="productName" value="SAMSUNG" />
+		<property name="productPrice" value="10400" />
+		<property name="productId" value="Sum-HS$-14" />
+
+	</bean>
+
+
+	<bean id="order1" class="fcom.nit.comp.OrderDetails">
+		<property name="orderId" value="88888888888888" />
+		<property name="orderPrice" value="300.50" />
+		<property name="items">
+			<set>
+                    <value>Cake</value>
+                    <value>CoolDrink</value>
+                    <value>House</value>
+			</set>
+		</property>
+
+	</bean>
+
+
+
+
+</beans>
+

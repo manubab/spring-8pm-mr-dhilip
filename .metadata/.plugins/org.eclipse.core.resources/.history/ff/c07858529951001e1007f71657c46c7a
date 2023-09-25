@@ -1,0 +1,76 @@
+package com.service;
+
+
+import java.util.Date;
+
+import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+
+@Component
+public class JwtTokenUtil 
+{
+	
+	
+	// token creation :jwt Api
+	
+	// 1.subject :username
+	// 2.at what time it is created :created time
+	// 3.Expaired time
+	
+	private long expMilliSeconds =3*6000;
+	
+	private final String Security_key="HSHDHSDJKDSDSHKDDFKDFJDJFDJFFKDFDKFKFSFSDKFDNKF"
+			+ "HDHSDSHDSJDSHHSDHSDHSDHSDHSDCNVCCXNCNCJDSHDHJDSHDNCNNNNNNHJDHSD";
+	
+	
+	
+	public String createToken(String userName)
+	{
+		String token=Jwts.builder().setSubject(userName)
+				.setIssuedAt(new Date(System.currentTimeMillis()))
+				.setExpiration(new Date(System.currentTimeMillis()+expMilliSeconds))
+				.signWith(SignatureAlgorithm.HS512, Security_key).compact();
+		
+		return token;
+	}
+	
+	
+	public boolean isValidateToken(String username,String token)
+	{
+		
+		String tokenUserName=getUserNameFromToken(token);
+	
+		
+		
+		
+		
+		
+		
+		return false;
+	}
+
+
+	private String getUserNameFromToken(String token) {
+	
+		String tokenUserName=Jwts.parser().setSigningKey(Security_key).parseClaimsJws(token).getBody().getSubject();
+		
+		return tokenUserName;
+	}
+	
+	
+	
+	public boolean isTokenExpaired(String token)
+	{
+		Date expiration =Jwts.parser().setSigningKey(Security_key).parseClaimsJws(token).getBody().getExpiration();
+		
+		
+		return expiration.before(new Date());
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;CompleteWebApp&apos; to &apos;01SpringCompleteWebApp&apos;" description="Rename resource &apos;CompleteWebApp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CompleteWebApp" name="01SpringCompleteWebApp" stamp="1694536336867" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;01SpringCompleteWebApp&apos; to &apos;Z01SpringCompleteWebApp&apos;" description="Rename resource &apos;01SpringCompleteWebApp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/01SpringCompleteWebApp" name="Z01SpringCompleteWebApp" stamp="1694536794887" updateReferences="true"/>
+</session>

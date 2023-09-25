@@ -1,0 +1,22 @@
+package com.flipkart;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import com.flipkart.Management.FlipkartApplication;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		ApplicationContext ob=new FileSystemXmlApplicationContext("D:\\String8pm\\Bean_wiring\\beans.xml");
+		
+		     Object o=ob.getBean("flipkart");
+		     
+		     FlipkartApplication flip=(FlipkartApplication)o;
+		     
+		     System.out.println(flip.getOrder());
+		     
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.dispatcher;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.config.MVCConfiguration;
+
+public class SpringWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer                                   {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		
+		
+		return new Class[] {MVCConfiguration.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+		
+		String[] allwedURLMapping= {"/"};
+		
+		return allwedURLMapping;
+	}
+
+}
+
+

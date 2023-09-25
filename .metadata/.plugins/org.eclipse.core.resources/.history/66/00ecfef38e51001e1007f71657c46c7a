@@ -1,0 +1,5 @@
+package com.config.security;
+
+public class SecurityWebApplicationInitializer {
+
+}

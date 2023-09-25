@@ -1,0 +1,27 @@
+package test;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+public class Main 
+{
+	public static void main(String[] args) {
+		
+		BeanFactory bean=new FileSystemXmlApplicationContext("D:\\String8pm\\Demo\\Beans.xml");
+		
+		Address ob1=(Address)bean.getBean("manu1");
+		ob1.printAdress();
+		
+		Address ob2=(Address)bean.getBean("manu2");
+		ob2.printAdress();
+		
+		System.out.println("Ob1 HashCode "+ob1.hashCode());
+		
+		System.out.println(" Ob2 HashCode "+ob2.hashCode());
+		
+		System.out.println(ob1);
+		
+		bean.getBean("st1");
+	}
+
+}

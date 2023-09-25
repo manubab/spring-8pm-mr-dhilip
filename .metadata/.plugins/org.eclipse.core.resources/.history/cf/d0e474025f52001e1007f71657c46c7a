@@ -1,0 +1,81 @@
+package com.jpa;
+import java.util.Properties;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+@Configuration
+@EnableJpaRepositories("com.*")
+@EnableTransactionManagement
+public class SpringJpaConfiguration 
+{
+	
+	@Bean
+	public javax.sql.DataSource getDataResource()
+	{
+		DriverManagerDataSource dataSource= new DriverManagerDataSource();
+		
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+		dataSource.setUsername("system");
+		dataSource.setPassword("tiger");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+
+		return dataSource;
+	}
+	
+	
+	@Bean("entityTransectionManager")
+	LocalContainerEntityManagerFactoryBean createEntityManager()
+	{
+		
+		LocalContainerEntityManagerFactoryBean factory =new LocalContainerEntityManagerFactoryBean();
+		factory.setDataSource(getDataResource());
+		factory.setPackagesToScan("com.*");		
+		factory.setJpaProperties(hibernateProperties());
+		
+		
+		HibernateJpaVendorAdapter adapter=new HibernateJpaVendorAdapter();
+		
+		factory.setJpaVendorAdapter(adapter);
+		
+		return factory;
+		
+		
+	}
+	
+	@Bean("transectionManaget")
+	public PlatformTransactionManager createTransectionManager()
+	{
+		
+		JpaTransactionManager transection=new JpaTransactionManager();
+		
+		transection.setEntityManagerFactory(createEntityManager().getObject());
+		
+		return transection;
+	}
+	
+	
+	
+	
+	
+	
+	@Bean
+	Properties hibernateProperties()
+	{
+		
+		Properties hibernateProperties=new Properties();
+		
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto","update");
+		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		hibernateProperties.setProperty("hibernate.show_sql", "true");
+		
+		return hibernateProperties;
+	}
+
+}
